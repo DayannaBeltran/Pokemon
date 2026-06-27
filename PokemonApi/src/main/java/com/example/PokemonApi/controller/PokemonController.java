@@ -35,4 +35,13 @@ public class PokemonController {
         return pokemonService.actualizarPokemonCompleto(id, pokemon);
     }
 
+    @PatchMapping("/{id}")
+    public Pokemon actualizarParcial(@PathVariable Long id, @RequestBody Pokemon pokemon) {
+        return pokemonService.actualizarPokemonParcial(id, pokemon);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarPokemon(@PathVariable Long id) {
+        pokemonService.eliminarPokemon(id);
+    }
 }
